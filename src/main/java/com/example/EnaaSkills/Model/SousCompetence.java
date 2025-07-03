@@ -19,8 +19,12 @@ public class SousCompetence {
 
     private String name;
 
+    private String description ;
+
     @ManyToOne
     private Competence competence;
+
+    private boolean isValide ;
 
 
 

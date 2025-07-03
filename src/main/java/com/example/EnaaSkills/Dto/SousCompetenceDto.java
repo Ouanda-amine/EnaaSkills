@@ -11,5 +11,9 @@ import lombok.Setter;
 @Setter
 public class SousCompetenceDto {
     private Long id ;
-    private String nom ;
+    private String name ;
+    private String description;
+    private Long idCompetence ;
+    private boolean isValide ;
+
 }
