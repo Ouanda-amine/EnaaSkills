@@ -24,5 +24,7 @@ public class Competence {
     @OneToMany
     private List<SousCompetence> sousCompetenceList;
 
+    private boolean isValide ;
+
 
 }

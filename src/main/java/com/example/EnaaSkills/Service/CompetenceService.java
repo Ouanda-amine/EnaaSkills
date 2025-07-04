@@ -4,6 +4,7 @@ import com.example.EnaaSkills.Dto.CompetenceDto;
 import com.example.EnaaSkills.Mapper.CompetenceMapper;
 import com.example.EnaaSkills.Model.Competence;
 import com.example.EnaaSkills.Repository.CompetenceRepo;
+import com.example.EnaaSkills.Repository.SousCompetenceRepo;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ public class CompetenceService {
 
     private  final CompetenceMapper competenceMapper;
     private  final CompetenceRepo competenceRepo;
+    private final SousCompetenceRepo sousCompetenceRepo;
 
 
     public CompetenceDto AddCompetence(CompetenceDto competenceDto){
@@ -39,6 +41,7 @@ public class CompetenceService {
     public CompetenceDto UpdateCompetence(CompetenceDto competenceDto , Long id){
         Competence competence = competenceRepo.findById(id).get();
         competence.setNom(competenceDto.getNom());
+        competence.setValide(competenceDto.isValide());
         return competenceMapper.ToCompetenceDto(competenceRepo.save(competenceMapper.ToCompetenceEntity(competenceDto)));
 
 

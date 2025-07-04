@@ -12,6 +12,7 @@ import lombok.Setter;
 public class CompetenceDto {
     private Long id ;
     private String nom ;
+    private boolean isValide ;
 
 
 
